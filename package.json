@@ -1,0 +1,15 @@
+{
+  "name": "desktop-assistant",
+  "version": "1.0.0",
+  "description": "An App for your desktop which makes it easier to remember things. ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "ThickduckPlayz",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^17.0.0"
+  },
+  "devDependencies": {}
+}
