@@ -13,7 +13,25 @@ const add = () => {
   unhide("submit-button");
 };
 
-let sub_button = document.getElementById("add-button");
-sub_button.onclick = () => {
+let add_button = document.getElementById("add-button");
+add_button.onclick = () => {
   add();
+};
+
+let input = document.getElementById("input-tag");
+let task_li = document.getElementById("task-list");
+
+const add_task = (inputField, list) => {
+  let value = inputField.value;
+  let entry = document.createElement("li");
+  entry.id = "task-item";
+  entry.appendChild(document.createTextNode(value));
+  list.appendChild(entry);
+
+  inputField.value = "";
+};
+
+let sub_button = document.getElementById("submit-button");
+sub_button.onclick = () => {
+  add_task(input, task_li);
 };
