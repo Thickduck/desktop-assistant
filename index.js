@@ -28,6 +28,7 @@ const add_task = (inputField, list) => {
     let value = inputField.value;
     let entry = document.createElement("li");
     entry.className = "task-item";
+    entry.id = "task-li";
     entry.appendChild(document.createTextNode(value));
     list.appendChild(entry);
 
@@ -48,11 +49,16 @@ clear_button.onclick = () => {
   clear_task(task_li);
 };
 
-const remove_task = (list) => {
+const strikethru_task = (list) => {
   let items = list.getElementsByTagName("li");
   for (let i = 0; i < items.length; i++) {
     items[i].onclick = () => {
-      items[i].parentNode.removeChild(items[i]);
+      items[i].style.textDecoration = "line-through";
     };
   }
+};
+
+let list = document.getElementById("task-list");
+list.onclick = () => {
+  strikethru_task(list);
 };
